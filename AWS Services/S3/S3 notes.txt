@@ -1,0 +1,74 @@
+Types of storage :
+==================
+1.Object based
+Object storage is a method for saving large volumes of unstructured data, including sensor data, audio files, logs, video and photo content, webpages, and emails. Each file or segment of data is saved as an "object," and each object includes metadata and a unique name or identifier for data retrieval. (Imagine how a driver might write down their space number in a large parking lot in order to remember where their vehicle is.)
+2.Block based
+Block storage divides files and data into equally sized blocks. Each block has a unique identifier, stored in a data lookup table. When data needs to be retrieved, the data lookup table is used to find the required blocks, which are then reassembled into their original form.
+
+
+S3(simple storage service):
+===========================
+based on object based storage
+11(9's)durability(99.999999999%)
+S3 service is global but the buckets in it are regional.
+S3 lifec-cycle policy
+block public access can perform both private and public services
+can use AWS athena to query S3 data and AWS redshiftspectrum to analyse data in AWS data warehouse and S3.
+granular data control.
+-------------
+S3 storage Class Analysis
+S3 Lifecycle
+S3 Cross Region Replication
+S3 Object Lock
+S3 Inventory
+S3 Batch Operations
+-------------
+consistency models:
+===================
+strongly consistent(read-after-write)
+-------------------------------------
+you can read the data after the second of writing
+Eventually Consistent
+---------------------
+after a second only you can be read the data after writing
+===============================================================
+Buckets and Object:
+since S3 is object based, applications can't be installed
+to store an object the following parameters are needed:
+1.Key
+2.Version ID
+3.Object----data that you want to store
+4.Metadata
+5.Access Control List(ACL)
+=====================================
+Access Control:
+S3 ACL:
+S3 bucket policies
+through IAM
+=====================================
+S3 Properties:(10)
+1.Version enabling--enable multiple version of a single object
+2.Static website hosting-->allows you to host static website
+3.server access logging--->used to log details of logging at each bucket.
+4.object level logging---->operations on objects can be monitored and create log using other services like cloud trial and log them in cloudwatch
+5.encryption
+a-->serverside
+b-->KMS--Key Management System
+6.Object Lock
+mode:
+a.Governence-->can provide some permission to alter object property
+b.Compliance-->nothing can be done only can read.
+7.Tags-->used for track billing
+a.userdefined
+b.awsdefined
+8.Transfer Accleration
+transfer data from one buket to client
+with the help of cloudfront
+9.Events
+create events to get notified about the object
+10.Requester pays
+bucket owner can make the object user to pay.
+===============================
+S3 Management:
+1.Lifecycle transition
+2.Cross-replication
